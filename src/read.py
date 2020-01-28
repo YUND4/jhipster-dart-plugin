@@ -6,5 +6,5 @@ class Reader:
     data = {}
 
     def __init__(self):
-        with open(self.path + 'models/Persuasion.json') as f:
+        with open(self.path + 'models/Material.json') as f:
             self.data = json.load(f)

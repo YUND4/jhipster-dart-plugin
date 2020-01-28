@@ -118,6 +118,18 @@
             "fieldType": "Integer"
         },
         {
+            "fieldName": "suspensionId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "funcionarioId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "funcionarioNombre",
+            "fieldType": "Integer"
+        },
+        {
             "fieldName": "nombre",
             "fieldType": "String",
             "fieldValidateRules": [
