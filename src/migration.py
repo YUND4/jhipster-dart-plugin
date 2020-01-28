@@ -12,14 +12,18 @@ class Migration:
         self.generator()
 
     def typed (self, t):
-        if (t =='Long'):
+        if (t =='Long' or t=='Int'):
             result = 'INTEGER'
         elif  (t =='String'):
             result = 'TEXT'
         elif  (t =='String'):
             result = 'TEXT'
-        elif  (t =='Instant'):
+        elif t == 'Instant' or t == 'ZonedDateTime' or t=='DateTime':
             result = 'TIMESTAMP'
+        elif t == 'Double' or t == 'BigDecimal':
+            result = 'REAL'
+        elif t == 'Boolean' or 'bool':
+            result = 'BOOLEAN'
         else:
             result = t
         return result
@@ -33,14 +37,16 @@ class Migration:
         with open(self.path + 'output/migrations\\' + self.data.get('name', '') + '.sql', 'w+') as f:
             
             f.write('CREATE TABLE ' + self.modelName + ' ( \n')
+
+            """ SET PROPERTIES STATIC  """
+
+            f.write('    id  INTEGER PRIMARY KEY'    + ',\r')
+            f.write('    idRemoto  INTEGER'          + ',\r')
+            f.write('    imagenesSync BOOLEAN'       + ',\r')
+
+            """ END PROPERTIES STATIC  """
+
             for i in fields:
                 f.write('    '  + i['fieldName'] +' ' + self.typed(i['fieldType']) + ' ' + ',\r')
 
-            """ SET PROPERTIES STATIC  """
-            f.write('   id  INTEGER '          + ',\r')
-            f.write('   idRemoto  INTEGER'     + ',\r')
-            f.write('   imagenesSync BOOLEAN'  + ',\r')
-
-            """ END PROPERTIES STATIC  """
-            
             f.write('  );\r' )
