@@ -1,4 +1,4 @@
-class LocationModel with ModsimORM implements ModsimModel { 
+class LocationModelModelIR with ModsimORM implements ModsimModel { 
   String streetAddress;  String postalCode;  String city;  String stateProvince;  LocationModel({    this.streetAddress,    this.postalCode,    this.city,    this.stateProvince,  });
   @override
   LocationModel fromJSON(Map<String, dynamic> json) => LocationModel(
