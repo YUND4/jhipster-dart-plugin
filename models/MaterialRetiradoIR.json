@@ -1,0 +1,28 @@
+{
+    "name": "MaterialRetirado",
+    "fields": [
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200124202045",
+    "entityTableName": "material_retirado_ir",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "SIMDCPMicroservice",
+    "applications": "*",
+    "microserviceName": "SIMDCPMicroservice"
+}

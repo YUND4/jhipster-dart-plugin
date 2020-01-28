@@ -1,0 +1,2 @@
+CREATE TABLE MaterialRetirado ( 
+    id  INTEGER PRIMARY KEY,    idRemoto  INTEGER,    imagenesSync BOOLEAN,    nombre TEXT ,    estado INTEGER ,    id BOOLEAN ,    idRemoto BOOLEAN ,    imagenesSync BOOLEAN ,    guardadoLocal BOOLEAN ,  );
