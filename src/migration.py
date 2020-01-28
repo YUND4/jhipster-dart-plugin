@@ -39,7 +39,7 @@ class Migration:
 
         print(time.time().__int__())
         
-        with open(self.path + 'output/migrations\\'+str(time.time().__int__())+'_table_' + self.data.get('name', '').lower() + '.sql', 'w+') as f:
+        with open(self.path + 'output/migrations/'+str(time.time().__int__())+'_table_' + self.data.get('name', '').lower() + '.sql', 'w+') as f:
             
             f.write('CREATE TABLE ' + self.modelName + ' ( \n')
 

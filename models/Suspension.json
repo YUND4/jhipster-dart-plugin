@@ -1,0 +1,181 @@
+{
+    "name": "Suspension",
+    "fields": [
+        {
+            "fieldName": "cuenta",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "fechaAccion",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "medidaActiva",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        },
+        {
+            "fieldName": "medidaReactiva",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        },
+        {
+            "fieldName": "peroiodoVencido",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "corteBalance",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "selloExistente",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        },
+        {
+            "fieldName": "selloUtilizado",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 15
+        },
+        {
+            "fieldName": "causaSuspension",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 2
+        },
+        {
+            "fieldName": "suspensionEn",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 2
+        },
+        {
+            "fieldName": "nombreCliente",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "servicio",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "comentario",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 200
+        },
+        {
+            "fieldName": "tipoComentario",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "mes",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "anio",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "capitarCorte",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "interesCorte",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fehcaGeneracion",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "ciclo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nombre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 64
+        },
+        {
+            "fieldName": "direccion",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "ruta",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "municipio",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "zona",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipoPredio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longitud",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "latitud",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "reconexionIR",
+            "otherEntityRelationshipName": "suspension",
+            "relationshipName": "reconexion",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200124202042",
+    "entityTableName": "suspension_ir",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "SIMDCPMicroservice",
+    "applications": "*",
+    "microserviceName": "SIMDCPMicroservice"
+}
