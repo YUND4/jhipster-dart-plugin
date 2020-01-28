@@ -1,0 +1,169 @@
+{
+    "name": "ReconexionIR",
+    "fields": [
+      {
+        "fieldName": "fechaGenerado",
+        "fieldType": "Instant",
+        "fieldValidateRules": [
+          "required"
+        ]
+      },
+      {
+        "fieldName": "montoPagado",
+        "fieldType": "Long"
+      },
+      {
+        "fieldName": "selloRemovido",
+        "fieldType": "String",
+        "fieldValidateRules": [
+          "maxlength"
+        ],
+        "fieldValidateRulesMaxlength": 15
+      },
+      {
+        "fieldName": "selloInstalado",
+        "fieldType": "String",
+        "fieldValidateRules": [
+          "maxlength"
+        ],
+        "fieldValidateRulesMaxlength": 15
+      },
+      {
+        "fieldName": "fechaReconexion",
+        "fieldType": "Instant"
+      },
+      {
+        "fieldName": "reconectado",
+        "fieldType": "Boolean"
+      },
+      {
+        "fieldName": "reconectadoEn",
+        "fieldType": "Long"
+      },
+      {
+        "fieldName": "fechaPago",
+        "fieldType": "Instant"
+      },
+      {
+        "fieldName": "causaReconexion",
+        "fieldType": "Long"
+      },
+      {
+        "fieldName": "tipoComentario",
+        "fieldType": "Long"
+      },
+      {
+        "fieldName": "comentarios",
+        "fieldType": "String",
+        "fieldValidateRules": [
+          "maxlength"
+        ],
+        "fieldValidateRulesMaxlength": 400
+      },
+      {
+        "fieldName": "nombreCliente",
+        "fieldType": "String",
+        "fieldValidateRules": [
+          "maxlength"
+        ],
+        "fieldValidateRulesMaxlength": 50
+      },
+      {
+        "fieldName": "servicio",
+        "fieldType": "Boolean"
+      },
+      {
+        "fieldName": "direccion",
+        "fieldType": "String",
+        "fieldValidateRules": [
+          "maxlength"
+        ],
+        "fieldValidateRulesMaxlength": 100
+      },
+      {
+        "fieldName": "cuenta",
+        "fieldType": "Long"
+      },
+      {
+        "fieldName": "ruta",
+        "fieldType": "Long"
+      },
+      {
+        "fieldName": "municipio",
+        "fieldType": "Long"
+      },
+      {
+        "fieldName": "zona",
+        "fieldType": "String"
+      },
+      {
+        "fieldName": "tipoPredio",
+        "fieldType": "String"
+      },
+      {
+        "fieldName": "estadoId",
+        "fieldType": "Long"
+      },
+      {
+        "fieldName": "ciclo",
+        "fieldType": "Integer"
+      },
+      {
+        "fieldName": "longitud",
+        "fieldType": "Double"
+      },
+      {
+        "fieldName": "latitud",
+        "fieldType": "Double"
+      },
+      {
+        "fieldName": "tipoObservacion",
+        "fieldType": "Long"
+      },
+      {
+        "fieldName": "contador",
+        "fieldType": "String"
+      },
+      {
+        "fieldName": "telefono",
+        "fieldType": "String"
+      },
+      {
+        "fieldName": "celular",
+        "fieldType": "String"
+      },
+      {
+        "fieldName": "identificacion",
+        "fieldType": "String"
+      }
+    ],
+    "relationships": [
+      {
+        "relationshipType": "one-to-one",
+        "otherEntityName": "suspensionIR",
+        "otherEntityRelationshipName": "reconexion",
+        "relationshipName": "suspension",
+        "otherEntityField": "id",
+        "ownerSide": true
+      },
+      {
+        "relationshipType": "many-to-one",
+        "otherEntityName": "funcionarioIR",
+        "otherEntityRelationshipName": "reconexionIR",
+        "relationshipName": "funcionario",
+        "otherEntityField": "nombre"
+      }
+    ],
+    "changelogDate": "20200124202041",
+    "entityTableName": "reconexion",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "SIMDCPMicroservice",
+    "applications": "*",
+    "microserviceName": "SIMDCPMicroservice"
+  }
+  
