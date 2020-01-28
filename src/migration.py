@@ -12,14 +12,16 @@ class Migration:
         self.generator()
 
     def typed (self, t):
-        if (t =='Long' or t=='Int'):
+        if (t =='Long' or t=='Integer'):
             result = 'INTEGER'
         elif  (t =='String'):
             result = 'TEXT'
         elif  (t =='String'):
             result = 'TEXT'
-        elif t == 'Instant' or t == 'ZonedDateTime' or t=='DateTime':
+        elif t == 'ZonedDateTime' or t=='DateTime' or t=='LocalDate':
             result = 'TIMESTAMP'
+        elif t == 'Instant':
+            result = 'DATE'
         elif t == 'Double' or t == 'BigDecimal':
             result = 'REAL'
         elif t == 'Boolean' or 'bool':
