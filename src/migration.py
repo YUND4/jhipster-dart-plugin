@@ -1,4 +1,5 @@
 import os
+import time
 
 
 class Migration:
@@ -35,8 +36,10 @@ class Migration:
         fields =  self.data['fields']
         if not os.path.exists(self.path + 'output/migrations'):
             os.makedirs(self.path + 'output/migrations')
+
+        print(time.time().__int__())
         
-        with open(self.path + 'output/migrations\\' + self.data.get('name', '') + '.sql', 'w+') as f:
+        with open(self.path + 'output/migrations\\'+str(time.time().__int__())+'_table_' + self.data.get('name', '').lower() + '.sql', 'w+') as f:
             
             f.write('CREATE TABLE ' + self.modelName + ' ( \n')
 
