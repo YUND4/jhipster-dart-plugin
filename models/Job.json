@@ -12,6 +12,14 @@
         {
             "fieldName": "maxSalary",
             "fieldType": "Long"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "DateTime"
+        },
+        {
+            "fieldName": "exist",
+            "fieldType": "bool"
         }
     ],
     "relationships": [
