@@ -24,9 +24,9 @@ class Model:
     def generator(self):
         self.modelName = self.data['name'] + 'Model'
         fields =  self.data['fields']
-        if not os.path.exists(self.path + 'output\\'):
-            os.makedirs(self.path + 'output\\')
-        with open(self.path + 'output\\' + self.data.get('name', '') + '.model.dart', 'w+') as f:
+        if not os.path.exists(self.path + 'output/'):
+            os.makedirs(self.path + 'output/')
+        with open(self.path + 'output/' + self.data.get('name', '') + '.model.dart', 'w+') as f:
             f.write('class ' + self.modelName + ' with ModsimORM implements ModsimModel { \r\n')
             for i in fields:
                 f.write('  ' + self.typed(i['fieldType']) + ' ' + i['fieldName'] + ';\r')
