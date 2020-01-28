@@ -1,0 +1,138 @@
+{
+    "name": "Persuasion",
+    "fields": [
+        {
+            "fieldName": "cuenta",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "digitoChequeo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fechaActualizacion",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "nombres",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "apellidos",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "identificacion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "direccion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefono",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "celular",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "calidad",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "ciclo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "fechaVisita",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "saldo",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "periodoVencido",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "estado",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "fechaGeneracion",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "longitud",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "latitud",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "altitud",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "satelite",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "atendidoPor",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "codigoAgua",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codigoGas",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ruta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "total",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipoResidencia",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "numMinutos",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "realizado",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "observacion",
+            "fieldType": "String"
+        }
+
+    ],
+    "relationships": [],
+    "changelogDate": "20200124202043",
+    "entityTableName": "persuasion_ir",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "SIMDCPMicroservice",
+    "applications": "*",
+    "microserviceName": "SIMDCPMicroservice"
+}

@@ -11,12 +11,12 @@ class Bloc:
         self.generator()
 
     def typed (self, t):
-        if t =='Long':
+        if t =='Long' or t == 'Integer':
             result = 'int'
         elif t == 'Instant' or t == 'ZonedDateTime':
             result = 'DateTime'
         elif t == 'Double' or t == 'BigDecimal':
-            result = 'Double'
+            result = 'double'
         elif t == 'Boolean':
             result = 'bool'
         else:
@@ -39,7 +39,7 @@ class Bloc:
             f.write('  final _idController = BehaviorSubject<int>();\r\n')
             f.write('  final _idRemotoController = BehaviorSubject<int>();\r\n')
             for i in fields:
-                f.write('  final _' + i['fieldName'] + 'Controller = BehaviorSubject<' + self.typed(i['fieldType']) + '>;\r')
+                f.write('  final _' + i['fieldName'] + 'Controller = BehaviorSubject<' + self.typed(i['fieldType']) + '>();\r')
             f.write('\r')
             f.write('  Stream<int> get idStream => _idController.stream;\r')
             for i in fields:
