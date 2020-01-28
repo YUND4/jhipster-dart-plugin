@@ -1,5 +1,0 @@
-class LocationModelBlocIR with Validators implements BlocBase { 
-  final listenConection = ConnectionStatusSingleton.getInstance();
-  final _idController = BehaviorSubject<int>();
-  final _locationListController = BehaviorSubject<LocationModel>();  final _streetAddressController = BehaviorSubject<String>;  final _postalCodeController = BehaviorSubject<String>;  final _cityController = BehaviorSubject<String>;  final _stateProvinceController = BehaviorSubject<String>;  Stream<int> get idStream => _idController.stream;  Stream<String> get streetAddressStream => _streetAddressController.stream;  Stream<String> get postalCodeStream => _postalCodeController.stream;  Stream<String> get cityStream => _cityController.stream;  Stream<String> get stateProvinceStream => _stateProvinceController.stream;  Stream<dynamic> get formValidStream => Observable.combineLatest([    streetAddressStream,    postalCodeStream,    cityStream,    stateProvinceStream  ], (a) => a);
-Function(ReconexionModelo) get reconexionSink => _reconexionListController.sink.add;
