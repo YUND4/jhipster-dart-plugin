@@ -71,6 +71,20 @@ class Model:
                 f.write('    this.' + i['fieldName'] + ',\r')
             f.write('  });\r' )
             f.write('''
+            
+  @override
+  int employeeId;
+
+  @override
+  bool hasChanges;
+
+  @override
+  DateTime movilToWeb;
+
+  @override
+  DateTime webToMovil;
+
+
   @override
   %s fromJSON(Map<String, dynamic> json) => %s(
 ''' % (self.modelName, self.modelName))

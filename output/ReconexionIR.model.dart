@@ -1,5 +1,19 @@
 class ReconexionModelIR with ModsimORM implements ModsimModel { 
   DateTime fechaGenerado;  int montoPagado;  String selloRemovido;  String selloInstalado;  DateTime fechaReconexion;  bool reconectado;  int reconectadoEn;  DateTime fechaPago;  int causaReconexion;  int tipoComentario;  String comentarios;  String nombreCliente;  bool servicio;  String direccion;  int cuenta;  int ruta;  int municipio;  String zona;  String tipoPredio;  int estadoId;  int ciclo;  double longitud;  double latitud;  int tipoObservacion;  String contador;  String telefono;  String celular;  String identificacion;  int id;  int idRemoto;  bool imagenesSync;  bool guardadoLocal;  ReconexionModelIR({    this.fechaGenerado,    this.montoPagado,    this.selloRemovido,    this.selloInstalado,    this.fechaReconexion,    this.reconectado,    this.reconectadoEn,    this.fechaPago,    this.causaReconexion,    this.tipoComentario,    this.comentarios,    this.nombreCliente,    this.servicio,    this.direccion,    this.cuenta,    this.ruta,    this.municipio,    this.zona,    this.tipoPredio,    this.estadoId,    this.ciclo,    this.longitud,    this.latitud,    this.tipoObservacion,    this.contador,    this.telefono,    this.celular,    this.identificacion,    this.id,    this.idRemoto,    this.imagenesSync,    this.guardadoLocal,  });
+            
+  @override
+  int employeeId;
+
+  @override
+  bool hasChanges;
+
+  @override
+  DateTime movilToWeb;
+
+  @override
+  DateTime webToMovil;
+
+
   @override
   ReconexionModelIR fromJSON(Map<String, dynamic> json) => ReconexionModelIR(
     fechaGenerado: json["fechaGenerado"],    montoPagado: json["montoPagado"],    selloRemovido: json["selloRemovido"],    selloInstalado: json["selloInstalado"],    fechaReconexion: json["fechaReconexion"],    reconectado: json["reconectado"],    reconectadoEn: json["reconectadoEn"],    fechaPago: json["fechaPago"],    causaReconexion: json["causaReconexion"],    tipoComentario: json["tipoComentario"],    comentarios: json["comentarios"],    nombreCliente: json["nombreCliente"],    servicio: json["servicio"],    direccion: json["direccion"],    cuenta: json["cuenta"],    ruta: json["ruta"],    municipio: json["municipio"],    zona: json["zona"],    tipoPredio: json["tipoPredio"],    estadoId: json["estadoId"],    ciclo: json["ciclo"],    longitud: json["longitud"],    latitud: json["latitud"],    tipoObservacion: json["tipoObservacion"],    contador: json["contador"],    telefono: json["telefono"],    celular: json["celular"],    identificacion: json["identificacion"],    id: json["id"],    idRemoto: json["idRemoto"],    imagenesSync: json["imagenesSync"],    guardadoLocal: json["guardadoLocal"],  );
