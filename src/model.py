@@ -41,15 +41,15 @@ class Model:
         return result
 
     def generator(self):
-        self.modelName = self.data['name'] + 'Model'
+        self.modelName = self.data['name'] + 'ModelIR'
         fields =  self.data['fields']
         if not os.path.exists(self.path + 'output/'):
             os.makedirs(self.path + 'output/')
         with open(self.path + 'output/' + self.data.get('name', '') + 'IR.model.dart', 'w+') as f:
-            f.write('class ' + self.modelName + 'ModelIR with ModsimORM implements ModsimModel { \r\n')
+            f.write('class ' + self.modelName + ' with ModsimORM implements ModsimModel { \r\n')
             for i in fields:
                 f.write('  ' + self.typed(i['fieldType']) + ' ' + i['fieldName'] + ';\r')
-            f.write('\r  ' + self.data['name'] + 'Model({\r' )
+            f.write('\r  ' + self.modelName + '({\r' )
             for i in fields:
                 f.write('    this.' + i['fieldName'] + ',\r')
             f.write('  });\r' )

@@ -28,12 +28,12 @@ class Bloc:
         return result
 
     def generator(self):
-        self.modelName = self.data['name'] + 'Model'
+        self.modelName = self.data['name'] + 'ModelIR'
         fields =  self.data['fields']
         if not os.path.exists(self.path + 'output/'):
             os.makedirs(self.path + 'output/')
         with open(self.path + 'output/' + self.data.get('name', '') + 'IR.bloc.dart', 'w+') as f:
-            f.write('class ' + self.modelName + 'BlocIR with Validators implements BlocBase { \r\n')
+            f.write('class ' + self.data['name'] + 'BlocIR with Validators implements BlocBase { \r\n')
             f.write('  final listenConection = ConnectionStatusSingleton.getInstance();\r\n')
             f.write('  final _' + self.data['name'].lower() + 'ListController = BehaviorSubject<' + self.modelName + '>();\r')
             f.write('  final _idController = BehaviorSubject<int>();\r\n')
@@ -50,6 +50,13 @@ class Bloc:
                 else:
                     f.write('    ' + i['fieldName'] + 'Stream,\r')
             f.write('  ], (a) => a);\r\n')
-            f.write('Function(ReconexionModelo) get reconexionSink => _reconexionListController.sink.add;\r')
+            f.write('\r')
+            f.write('  Function(' + self.modelName + ') get reconexionSink => _' + self.data['name'].lower() + 'ListController.sink.add;\r')
             for i in fields:
                 f.write('  Function(' + self.typed(i['fieldType']) + ') get ' + i['fieldName'] + 'Sink => _' + i['fieldName'] + 'Controller.sink.add;\r')
+            f.write('\r')
+            f.write('  ' + self.modelName +' get reconexionModeloValue => _' + self.data['name'].lower() + 'ListController.value;\r')
+            f.write('  int get idValue => _idController.value;\r')
+            for i in fields:
+                f.write('  ' + self.typed(i['fieldType']) + ' get ' + i['fieldName'] + 'Value => _' + i['fieldName'] + 'Controller.value;\r')
+            f.write('\r')
