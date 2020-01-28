@@ -11,12 +11,12 @@ class Model:
         self.generator()
 
     def typed (self, t):
-        if t =='Long':
+        if t =='Long' or t == 'Integer':
             result = 'int'
         elif t == 'Instant' or t == 'ZonedDateTime':
             result = 'DateTime'
         elif t == 'Double' or t == 'BigDecimal':
-            result = 'Double'
+            result = 'double'
         elif t == 'Boolean':
             result = 'bool'
         else:
@@ -24,6 +24,7 @@ class Model:
         return result
 
     def validator (self, t, typo, tosqlite = False, fromsqlite = False):
+        typo = self.typed(typo)
         result = t
         if (typo == "DateTime") :
             result = t + ' is ' + typo + ' ? "${' + t + '.year.toString().padLeft(4, ' + "'0" + "'" + ')}-${' + t + '.month.toString().padLeft(2, ' + "'0" + "'" + ')}-${' + t + '.day.toString().padLeft(2, ' + "'0" + "'" + ')}T${' + t + '.hour.toString().padLeft(2, ' + "'0" + "'" + ')}:${' + t + '.minute.toString().padLeft(2, ' + "'0" + "'" + ')}:${' + t + '.second.toString().padLeft(2, ' + "'0" + "'" + ')}-05:00" : null'
