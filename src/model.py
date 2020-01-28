@@ -11,8 +11,14 @@ class Model:
         self.generator()
 
     def typed (self, t):
-        if (t =='Long'):
+        if t =='Long':
             result = 'int'
+        elif t == 'Instant' or t == 'ZonedDateTime':
+            result = 'DateTime'
+        elif t == 'Double' or t == 'BigDecimal':
+            result = 'Double'
+        elif t == 'Boolean':
+            result = 'bool'
         else:
             result = t
         return result
@@ -39,8 +45,8 @@ class Model:
         fields =  self.data['fields']
         if not os.path.exists(self.path + 'output/'):
             os.makedirs(self.path + 'output/')
-        with open(self.path + 'output/' + self.data.get('name', '') + '.model.dart', 'w+') as f:
-            f.write('class ' + self.modelName + ' with ModsimORM implements ModsimModel { \r\n')
+        with open(self.path + 'output/' + self.data.get('name', '') + 'IR.model.dart', 'w+') as f:
+            f.write('class ' + self.modelName + 'ModelIR with ModsimORM implements ModsimModel { \r\n')
             for i in fields:
                 f.write('  ' + self.typed(i['fieldType']) + ' ' + i['fieldName'] + ';\r')
             f.write('\r  ' + self.data['name'] + 'Model({\r' )
