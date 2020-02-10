@@ -32,7 +32,7 @@ class Bloc:
         fields =  self.data['fields']
         if not os.path.exists(self.path + 'output/'):
             os.makedirs(self.path + 'output/')
-        with open(self.path + 'output/' + self.data.get('name', '') + 'IR.bloc.dart', 'w+') as f:
+        with open(self.path + 'output/' + self.data.get('name', '') + '.bloc.dart', 'w+') as f:
             f.write('class ' + self.data['name'] + 'BlocIR with Validators implements BlocBase { \r\n')
             f.write('  final listenConection = ConnectionStatusSingleton.getInstance();\r\n')
             f.write('  final _' + self.data['name'].lower() + 'ListController = BehaviorSubject<' + self.modelName + '>();\r')

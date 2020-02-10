@@ -1,0 +1,65 @@
+{
+  "name": "Entity",
+  "fields": [
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": ""
+    },
+    {
+      "fieldName": "lastModifiedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "id",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "fechaAuditoria",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "usuarioAuditor",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codigoERP",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "valorItem",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "materialEntregado",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "materialProgramado",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "materialUsado",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "synadmelemgene",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "transmittedToMovil",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "transmittedToServer",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "ordenTrabajoId",
+      "fieldType": ""
+    }
+  ]
+}

@@ -28,7 +28,7 @@ class Model:
         result = t
         if (typo == "DateTime") :
             result = t + ' is ' + typo + ' ? "${' + t + '.year.toString().padLeft(4, ' + "'0" + "'" + ')}-${' + t + '.month.toString().padLeft(2, ' + "'0" + "'" + ')}-${' + t + '.day.toString().padLeft(2, ' + "'0" + "'" + ')}T${' + t + '.hour.toString().padLeft(2, ' + "'0" + "'" + ')}:${' + t + '.minute.toString().padLeft(2, ' + "'0" + "'" + ')}:${' + t + '.second.toString().padLeft(2, ' + "'0" + "'" + ')}-05:00" : null'
-        
+
         if (typo == "bool" and tosqlite):
             result = t + ' == true ? 1 : 0'
 
@@ -38,31 +38,23 @@ class Model:
             result = ' is String ? DateTime.parse(json["' + t + '"]) : json["' + t + '"]'
         if (typo == "bool" and fromsqlite):
             result = ' = (json["' + t + '"]  == null || json["' + t + '"] == 0) ? false : true'
-        
+
         return result
 
     def generator(self):
         self.modelName = self.data['name'] + 'ModelIR'
         fields =  self.data['fields']
         fields.append({
-            "fieldName":"id",
-            "fieldType":"int"
-        })
-        fields.append({
             "fieldName":"idRemoto",
-            "fieldType":"int"
+            "fieldType":"Integer"
         })
         fields.append({
             "fieldName":"imagenesSync",
-            "fieldType":"bool"
-        })
-        fields.append({
-            "fieldName":"guardadoLocal",
-            "fieldType":"bool"
+            "fieldType":"Boolean"
         })
         if not os.path.exists(self.path + 'output/'):
             os.makedirs(self.path + 'output/')
-        with open(self.path + 'output/' + self.data.get('name', '') + 'IR.model.dart', 'w+') as f:
+        with open(self.path + 'output/' + self.data.get('name', '') + '.model.dart', 'w+') as f:
             f.write('class ' + self.modelName + ' with ModsimORM implements ModsimModel { \r\n')
             for i in fields:
                 f.write('  ' + self.typed(i['fieldType']) + ' ' + i['fieldName'] + ';\r')
@@ -71,7 +63,7 @@ class Model:
                 f.write('    this.' + i['fieldName'] + ',\r')
             f.write('  });\r' )
             f.write('''
-            
+
   @override
   int employeeId;
 
