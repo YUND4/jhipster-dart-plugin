@@ -1,90 +1,33 @@
 {
-    "name": "MaterialSuspensionIR",
+    "name": "RecursosOTIR",
     "fields": [
-        {"fieldName":"transmittedToServer",
-         "fieldType": "Boolean"
-        },
-        {"fieldName":"firma",
-         "fieldType": "String"
-        },
-        {"fieldName":"ultimaSincronizacion",
-         "fieldType": "Instant"
-        },
-        {"fieldName":"realizado",
-         "fieldType": "Boolean"
-        },
-        {"fieldName":"tipoPredio",
-         "fieldType": "String"
-        },
-        {"fieldName":"funcionarioId",
-         "fieldType": "Integer"
-        },
-        {"fieldName":"funcionarioNombre",
-         "fieldType": "String"
-        },
-        {"fieldName":"createdBy",
-         "fieldType": "String"
-        },
-        {"fieldName":"createdDate",
-         "fieldType": "Instant"
-        },
-        {"fieldName":"lastModifiedBy",
-         "fieldType": "String"
-        },
-        {"fieldName":"lastModifiedDate",
-         "fieldType": "Instant"
-        },
-        {"fieldName":"id",
-         "fieldType": "Integer"
-        },
-        {"fieldName":"cantidad",
-         "fieldType": "Integer"
-        },
-        {"fieldName":"accion",
-         "fieldType": "Integer"
-        },
-        {"fieldName":"propiedad",
-         "fieldType": "Integer"
-        },
-        {"fieldName":"suspensionId",
-         "fieldType": "Integer"
-        },
-        {"fieldName":"materialRetiradoId",
-         "fieldType": "Integer"
-        },
-        {"fieldName":"materialRetiradoNombre",
-         "fieldType": "String"
-        },
-        {"fieldName":"transmittedToMovil",
-         "fieldType": "Boolean"
-        }
-    ],
-    "relationships": [
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "suspensionIR",
-            "otherEntityRelationshipName": "materialSuspensionIR",
-            "relationshipName": "suspension",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "materialRetiradoIR",
-            "otherEntityRelationshipName": "materialSuspensionIR",
-            "relationshipName": "materialRetirado",
-            "otherEntityField": "nombre"
-        }
-    ],
-    "changelogDate": "20200124202046",
-    "entityTableName": "material_suspension_ir",
-    "dto": "mapstruct",
-    "pagination": "pagination",
-    "service": "serviceClass",
-    "jpaMetamodelFiltering": false,
-    "fluentMethods": true,
-    "readOnly": false,
-    "clientRootFolder": "SIMDCPMicroservice",
-    "applications": "*",
-    "microserviceName": "SIMDCPMicroservice",
-    "enableEntityAudit": true
+            {"fieldName":"createdBy",
+             "fieldType": "String"},
+            {"fieldName":"createdDate",
+             "fieldType": "DateTime"},
+            {"fieldName":"lastModifiedBy",
+             "fieldType": ""},
+            {"fieldName":"lastModifiedDate",
+             "fieldType": ""},
+            {"fieldName":"id",
+             "fieldType": ""},
+            {"fieldName":"idRecursos",
+             "fieldType": ""},
+            {"fieldName":"fechaAuditoria",
+             "fieldType": ""},
+            {"fieldName":"usuarioAutor",
+             "fieldType": ""},
+            {"fieldName":"descripcion",
+             "fieldType": ""},
+            {"fieldName":"recursosQTY",
+             "fieldType": ""},
+            {"fieldName":"revisarEmpleado",
+             "fieldType": ""},
+            {"fieldName":"transmitiraDispositivo",
+             "fieldType": ""},
+            {"fieldName":"transmitiraServidor",
+             "fieldType": ""},
+            {"fieldName":"ordenTrabajoId",
+             "fieldType": ""}
+    ]
 }

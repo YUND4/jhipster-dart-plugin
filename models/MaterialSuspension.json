@@ -1,0 +1,38 @@
+{
+    "name": "MaterialSus",
+    "fields": [
+        {"fieldName":"id",
+         "fieldType":"Long"
+        },
+        {"fieldName":"cantidad",
+         "fieldType":"Integer"
+        },
+        {"fieldName":"accion",
+         "fieldType":"Integer"
+        },
+        {"fieldName":"propiedad",
+         "fieldType":"Integer"
+        },
+        {"fieldName":"suspensionId",
+         "fieldType":"Integer"
+        },
+        {"fieldName":"materialRetiradoId",
+         "fieldType":"Integer"
+        },
+        {"fieldName":"materialRetiradoNombre",
+         "fieldType":"String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200124202045",
+    "entityTableName": "material_retirado_ir",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "SIMDCPMicroservice",
+    "applications": "*",
+    "microserviceName": "SIMDCPMicroservice"
+}
