@@ -37,7 +37,7 @@ class Model:
         if (typo == "DateTime" and fromsqlite):
             result = ' is String ? DateTime.parse(json["' + t + '"]) : json["' + t + '"]'
         if (typo == "bool" and fromsqlite):
-            result = ' = (json["' + t + '"]  == null || json["' + t + '"] == 0) ? false : true'
+            result = ' || json["' + t + '"] == 0 ? false : true'
 
         return result
 

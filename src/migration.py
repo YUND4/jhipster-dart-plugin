@@ -38,20 +38,21 @@ class Migration:
             os.makedirs(self.path + 'output/migrations')
 
         print(time.time().__int__())
-        
+
         with open(self.path + 'output/migrations/'+str(time.time().__int__())+'_table_' + self.data.get('name', '').lower() + '.sql', 'w+') as f:
-            
+
             f.write('CREATE TABLE ' + self.modelName + ' ( \n')
 
             """ SET PROPERTIES STATIC  """
 
-            f.write('    id  INTEGER PRIMARY KEY'    + ',\r')
-            f.write('    idRemoto  INTEGER'          + ',\r')
-            f.write('    imagenesSync BOOLEAN'       + ',\r')
+            f.write('    id INTEGER PRIMARY KEY'    + ',\r')
 
             """ END PROPERTIES STATIC  """
 
             for i in fields:
-                f.write('    '  + i['fieldName'] +' ' + self.typed(i['fieldType']) + ' ' + ',\r')
+                if i['fieldName'] == 'id':
+                    pass
+                else:
+                    f.write('    '  + i['fieldName'] +' ' + self.typed(i['fieldType']) + ',\r')
 
             f.write('  );\r' )

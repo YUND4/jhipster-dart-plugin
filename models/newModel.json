@@ -1,13 +1,17 @@
 {
-  "name": "Entity",
+  "name": "ManiobraOTIR",
   "fields": [
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
     {
       "fieldName": "createdDate",
       "fieldType": "Instant"
     },
     {
       "fieldName": "lastModifiedBy",
-      "fieldType": ""
+      "fieldType": "String"
     },
     {
       "fieldName": "lastModifiedDate",
@@ -18,48 +22,32 @@
       "fieldType": "Integer"
     },
     {
-      "fieldName": "fechaAuditoria",
-      "fieldType": "Instant"
-    },
-    {
-      "fieldName": "usuarioAuditor",
+      "fieldName": "elemento",
       "fieldType": "String"
     },
     {
-      "fieldName": "codigoERP",
-      "fieldType": "Integer"
+      "fieldName": "fechaInicial",
+      "fieldType": "Instant"
     },
     {
-      "fieldName": "valorItem",
-      "fieldType": "Integer"
+      "fieldName": "fechaFinal",
+      "fieldType": "Instant"
     },
     {
-      "fieldName": "materialEntregado",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "materialProgramado",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "materialUsado",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "synadmelemgene",
-      "fieldType": "Integer"
-    },
-    {
-      "fieldName": "transmittedToMovil",
-      "fieldType": "Boolean"
-    },
-    {
-      "fieldName": "transmittedToServer",
+      "fieldName": "transmitido",
       "fieldType": "Boolean"
     },
     {
       "fieldName": "ordenTrabajoId",
-      "fieldType": ""
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "transmitiraDispositivo",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "transmitiraServidor",
+      "fieldType": "Boolean"
     }
   ]
 }
